@@ -19,7 +19,4 @@ function sendForm(send) {
         $('form')[0].reset();
         $('#message').html('Спасибо!');
     })
-    .fail(function(){
-        $('#message').html('Сообщение не отправлено!');
-    });
 }
