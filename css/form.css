@@ -27,3 +27,6 @@ form {
     height: 50px;
     text-transform: uppercase;
 }
+#message {
+    text-align: center;
+}
