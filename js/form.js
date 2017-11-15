@@ -1,13 +1,11 @@
-$('#page-loaded').html( (new Date).toLocaleTimeString() );
-
 $('form input[type="submit"]').click(sendForm);
 
-function sendForm(e) {
+function sendForm(send) {
     const form = $('form')[0];
     if (!form.checkValidity()) {
         return;
     }
-    e.preventDefault();
+    send.preventDefault();
     $.ajax({
         url: "https://formspree.io/lytsarp@gmail.com", 
         method: "POST",
@@ -19,9 +17,9 @@ function sendForm(e) {
     })
     .done(function(){
         $('form')[0].reset();
-        $('#msg').html('Thank you!');
+        $('#message').html('Спасибо!');
     })
     .fail(function(){
-        $('#msg').html('Sorry, there is an error!');
+        $('#message').html('Сообщение не отправлено!');
     });
 }
